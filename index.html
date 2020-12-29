@@ -1,1 +1,98 @@
-<h1>Ramakrishna KODUKULA<h1>
+<!DOCTYPE html>
+<!-- 
+https://www.itsolutionstuff.com/post/angular-8-bootstrap-tabs-exampleexample.html
+-->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Look@ME</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="styles.css">
+	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script><!--https://fontawesome.com/icons -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script>
+  $(function(){
+    var includes = $('[data-include]');
+    jQuery.each(includes, function(){
+      //var file = 'views/' + $(this).data('include') + '.html';
+	  var file = $(this).data('include') + '.html';
+      $(this).load(file);
+    });
+  });
+</script>
+</head>
+<body>
+
+
+<div class="wrapper">
+    <div class="sidebar">
+        <h2>Look<i class="fab fa-battle-net" style="font-size: 1em; color: Tomato;"></i>ME</h2>
+        <ul>
+            <li><a href="home.html"><i class="fas fa-home"></i>Home</a></li>
+            <li><a href="#"><i class="fas fa-user"></i>Profile</a></li>
+			<li><a href="#selfFSD"><i class="fas fa-hand-holding-usd"></i>Self FSD</a></li>
+            <li><a href="#"><i class="fas fa-address-card"></i>About</a></li>
+            <li><a href="#"><i class="fas fa-project-diagram"></i>portfolio</a></li>
+            <li><a href="#"><i class="fas fa-blog"></i>Blogs</a></li>
+            <li><a href="#"><i class="fas fa-address-book"></i>Contact</a></li>
+            <li><a href="#"><i class="fas fa-map-pin"></i>Map</a></li>
+        </ul> 
+        <div class="social_media">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="main_content">
+        <div class="header">Welcome!! Have a nice day.</div>  
+<div class="info" >
+<div class="container" >
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#Dashborard"><i class="fas fa-hand-holding-usd"></i> Dash Board</a></li>
+    <li><a href="#Monthly">Monthly Status</a></li>
+    <li><a href="#Banking">Banking</a></li>
+    <li><a href="#FSR">Financial Static Report</a></li>
+	<li><a href="#FDR">Financial Details Report</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="Dashborard" class="tab-pane fade in active">
+      <h3>Dash Board</h3>
+      <p class="act"></p>
+    </div>
+    <div id="Monthly" class="tab-pane fade">
+      <h3 class="act"></h3>
+      <p class="act"></p>
+    </div>
+    <div id="Banking" class="tab-pane fade">
+      <h3 class="act"></h3>
+      <p class="act"></p>
+    </div>
+    <div id="FSstatus" class="tab-pane fade">
+      <h3 class="act"></h3>
+      <p ></p>
+    </div>
+  </div>
+</div>
+</div>
+<div data-include="footer"></div>
+</div>
+</div>
+
+<script>
+$(document).ready(function(){
+  $(".nav-tabs a").click(function(){
+    $(this).tab('show');
+  });
+  $('.nav-tabs a').on('shown.bs.tab', function(event){
+    var x = $(event.target).text();         // active tab
+    var y = $(event.relatedTarget).text();  // previous tab
+	$(".act").text(x);
+	$(".prev").text(y);
+  });
+});
+</script>
+</body>
+</html>
